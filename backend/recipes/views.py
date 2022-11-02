@@ -8,7 +8,7 @@ from .filters import IngredientFilter, RecipeFilter
 from .models import Ingredient, Recipe, Tag
 from .permissions import IsAuthorOrReadOnly
 from .serializers import (IngredientSerializer, RecipeSerializer,
-                          TagSerializer,UserRecipeSerializer)
+                          TagSerializer, UserRecipeSerializer)
 from .shopping_list_generator import generate_shopping_list
 
 User = get_user_model()
