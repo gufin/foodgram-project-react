@@ -12,13 +12,9 @@ SECRET_KEY = os.getenv(
     default='p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs'
 )
 
+DEBUG = os.getenv('DEBUG', default=False)
 
-#DEBUG = os.getenv('DEBUG', default=False)
-DEBUG = False
-
-#ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*').split()
-ALLOWED_HOSTS = ['127.0.0.1', 'web', 'localhost']
-
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*').split()
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -112,7 +108,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
@@ -147,4 +142,5 @@ SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
 
-CSRF_TRUSTED_ORIGINS = ['http://*.localhost','http://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS',
+                                 'http://*.localhost').split()
