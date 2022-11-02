@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.urls import include, path
 
-
 apps_urlpatterns = [
     path('', include('users.urls')),
     path('', include('recipes.urls')),
