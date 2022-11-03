@@ -86,16 +86,11 @@ def shopping_cart_favorite_update(action_type, request, **kwargs):
     recipe = get_object_or_404(Recipe, id=kwargs['id'])
     mark = False
     if action_type == 'cart':
-        mark = User.objects.filter(
-                id=user.id,
-                cart__recipes=recipe
-            ).exists()
+        mark = User.objects.filter(id=user.id, cart__recipes=recipe).exists()
     if action_type == 'favorite':
         mark = User.objects.filter(
             id=user.id,
-            favourite_recipes=recipe
-        ).exists()
-
+            favourite_recipes=recipe).exists()
     if request.method == 'POST' and not mark:
         if action_type == 'cart':
             user.cart.recipes.add(recipe)
