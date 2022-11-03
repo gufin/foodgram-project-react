@@ -42,7 +42,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPO_NAME }}:latest
 
   build_and_push_frontend_to_docker_hub:
-    name: Pushing frontend image to Docker Hub
+    name: Push frontend image to Docker Hub
     runs-on: ubuntu-latest
     needs: tests
     steps:

@@ -11,7 +11,6 @@ RUN pip3 install -r requirements.txt --no-cache-dir
 COPY . .
 RUN apt update
 RUN apt install fonts-indic -y
-RUN fc-cache -f
 RUN apt-get update
 RUN apt-get install -y fontconfig
 RUN fc-cache -f -v
