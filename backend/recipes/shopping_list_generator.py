@@ -17,7 +17,7 @@ def generate_shopping_list(user):
     response['Content-Disposition'] = (
         'attachment; filename="shopping_list.pdf"'
     )
-    pdfmetrics.registerFont(TTFont('Gargi', 'Gargi.ttf', 'UTF-8'))
+    pdfmetrics.registerFont(TTFont('Sarai', 'Sarai.ttf', 'UTF-8'))
     page = Canvas(filename=response)
     page.setFont('Gargi', 24)
     page.drawString(210, 800, 'Список покупок')
