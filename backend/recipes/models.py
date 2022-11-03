@@ -148,7 +148,8 @@ class Cart(models.Model):
         User,
         on_delete=models.CASCADE,
         related_name='cart',
-        verbose_name='Пользователь'
+        verbose_name='Пользователь',
+        unique=True
     )
     recipes = models.ManyToManyField(
         Recipe,
@@ -165,7 +166,6 @@ class Cart(models.Model):
 
 
 def create_cart(sender, instance, **kwargs):
-    print("Создали корзину")
     Cart.objects.get_or_create(user=instance)
 
 

@@ -17,9 +17,7 @@ services:
     env_file:
       - ./.env
   frontend:
-    build:
-      context: ../frontend
-      dockerfile: Dockerfile
+    image: ivanddoker/foodgram-frontend:latest
     volumes:
       - ../frontend/:/app/result_build/
   nginx:

@@ -1,6 +1,5 @@
 from django.contrib.auth import get_user_model
-from django_filters import CharFilter
-from django_filters import FilterSet as DefaultFilterSet
+from django_filters import CharFilter, FilterSet as DefaultFilterSet
 from django_filters.rest_framework import filters, FilterSet
 
 from .models import Recipe
