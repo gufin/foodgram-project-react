@@ -1,5 +1,12 @@
 [![Django-app workflow](https://github.com/gufin/foodgram-project-react/actions/workflows/main.yml/badge.svg)](https://github.com/gufin/foodgram-project-react/actions/workflows/main.yml)
 # Foodgram
+Данные для второго эапа проверки.
+
+Проект опубликован: http://84.201.175.228/
+
+Логин: test@gmail.com
+
+Пароль: 123
 
 ### _Учебный проект_
 
