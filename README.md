@@ -1,3 +1,4 @@
+[![Django-app workflow](https://github.com/gufin/foodgram-project-react/actions/workflows/main.yml/badge.svg)](https://github.com/gufin/foodgram-project-react/actions/workflows/main.yml)
 # Foodgram
 
 ### _Учебный проект_
@@ -57,7 +58,7 @@ sudo docker-compose exec web python manage.py migrate
 ```
 Создать суперпользователя django:
 ```sh
-sudo docker-compose exec web python manage.py migrate
+sudo docker-compose exec web python manage.py createsuperuser
 ```
 Собрать статические файлы:
 ```sh
@@ -86,6 +87,7 @@ DB_HOST=db
 DB_PORT=5432
 DOCKER_PASSWORD # Пароль пользователя hub.docker.com
 DOCKER_USERNAME # Пользователь hub.docker.com
+DOCKER_REPO_NAME # Имя образа в hub.docker.com
 HOST # Адрес вашего сервера
 PASSPHRASE # Секретная фраза вашего ssh ключа (если есть)
 SECRET_KEY=your_secret_key

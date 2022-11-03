@@ -12,7 +12,8 @@ SECRET_KEY = os.getenv(
     default='p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs'
 )
 
-DEBUG = os.getenv('DEBUG', default=False)
+#DEBUG = os.getenv('DEBUG', default=False)
+DEBUG = True
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*').split()
 
@@ -63,6 +64,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'foodgram.wsgi.application'
 
+"""
 if DEBUG:
     DATABASES = {
         'default': {
@@ -71,17 +73,18 @@ if DEBUG:
         }
     }
 else:
-    DATABASES = {
-        'default': {
-            'ENGINE': os.getenv('DB_ENGINE',
-                                default='django.db.backends.postgresql'),
-            'NAME': os.getenv('DB_NAME'),
-            'USER': os.getenv('POSTGRES_USER'),
-            'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-            'HOST': os.getenv('DB_HOST'),
-            'PORT': os.getenv('DB_PORT')
-        }
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': os.getenv('DB_ENGINE',
+                            default='django.db.backends.postgresql'),
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT')
     }
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -142,5 +145,9 @@ SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('Bearer',),
 }
 
+"""
 CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS',
                                  'http://*.localhost').split()
+"""
+CSRF_TRUSTED_ORIGINS = ['http://*.localhost', 'http://*.127.0.0.1',
+                        'http://*.84.201.175.228']
