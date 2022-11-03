@@ -19,9 +19,9 @@ def generate_shopping_list(user):
     )
     pdfmetrics.registerFont(TTFont('Sarai', 'Sarai.ttf', 'UTF-8'))
     page = Canvas(filename=response)
-    page.setFont('Gargi', 24)
+    page.setFont('Sarai', 24)
     page.drawString(210, 800, 'Список покупок')
-    page.setFont('Gargi', 16)
+    page.setFont('Sarai', 16)
     height = 760
     is_page_done = False
     for idx, ingr in enumerate(shopping_list, start=1):
