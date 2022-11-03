@@ -17,11 +17,11 @@ def generate_shopping_list(user):
     response['Content-Disposition'] = (
         'attachment; filename="shopping_list.pdf"'
     )
-    pdfmetrics.registerFont(TTFont('TNR', 'times.ttf', 'UTF-8'))
+    pdfmetrics.registerFont(TTFont('Gargi', 'Gargi.ttf', 'UTF-8'))
     page = Canvas(filename=response)
-    page.setFont('TNR', 24)
+    page.setFont('Gargi', 24)
     page.drawString(210, 800, 'Список покупок')
-    page.setFont('TNR', 16)
+    page.setFont('Gargi', 16)
     height = 760
     is_page_done = False
     for idx, ingr in enumerate(shopping_list, start=1):
