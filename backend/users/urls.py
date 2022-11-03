@@ -9,8 +9,8 @@ router = DefaultRouter()
 router.register('', UserViewSet, basename='users')
 
 auth_urlpatterns = [
-    path('login/', CustomAuthToken.as_view()),
-    path('logout/', DestroyTokenAPIView.as_view()),
+    path('login/', CustomAuthToken.as_view(), name='login'),
+    path('logout/', DestroyTokenAPIView.as_view(), name='logout'),
 ]
 
 urlpatterns = [

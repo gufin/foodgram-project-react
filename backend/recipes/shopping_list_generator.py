@@ -12,22 +12,22 @@ def generate_shopping_list(user):
         recipe__carts__user=user).values(
         'ingredient__name',
         'ingredient__measurement_unit'
-    ).annotate(amount=Sum('amount')).order_by()
+    ).annotate(quantity=Sum('amount')).order_by()
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = (
         'attachment; filename="shopping_list.pdf"'
     )
-    pdfmetrics.registerFont(TTFont('Vera', 'Vera.ttf', 'UTF-8'))
+    pdfmetrics.registerFont(TTFont('Times', 'Times.ttf', 'UTF-8'))
     page = Canvas(filename=response)
-    page.setFont('Vera', 24)
+    page.setFont('Times', 24)
     page.drawString(210, 800, 'Список покупок')
-    page.setFont('Vera', 16)
+    page.setFont('Times', 16)
     height = 760
     is_page_done = False
     for idx, ingr in enumerate(shopping_list, start=1):
         is_page_done = False
         page.drawString(60, height, text=(
-            f'{idx}. {ingr["ingredient__name"]} - {ingr["amount"]} '
+            f'{idx}. {ingr["ingredient__name"]} - {ingr["quantity"]} '
             f'{ingr["ingredient__measurement_unit"]}'
         ))
         height -= 30

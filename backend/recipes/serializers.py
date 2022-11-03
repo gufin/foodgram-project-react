@@ -99,12 +99,12 @@ class RecipeSerializer(serializers.ModelSerializer):
 
     @staticmethod
     def add_ingredients(instance, ingredients):
-        for ingredient in ingredients:
-            IngredientAmount.objects.get_or_create(
-                ingredient=ingredient['ingredient'],
-                amount=ingredient['amount'],
-                recipe=instance
-            )
+        objs = [IngredientAmount(
+            ingredient=ingredient['ingredient'],
+            amount=ingredient['amount'],
+            recipe=instance
+        ) for ingredient in ingredients]
+        IngredientAmount.objects.bulk_create(objs)
 
     def create(self, validated_data):
         if 'tags' in validated_data:
