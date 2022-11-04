@@ -42,8 +42,6 @@ class RecipeViewSet(viewsets.ModelViewSet):
         serializer.save(author=self.request.user)
 
     def perform_update(self, serializer):
-        if serializer.data.get('author') != self.request.user:
-            return Response(status=status.HTTP_403_FORBIDDEN)
         serializer.save()
 
     @action(
