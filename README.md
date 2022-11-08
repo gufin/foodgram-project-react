@@ -1,13 +1,5 @@
 [![Django-app workflow](https://github.com/gufin/foodgram-project-react/actions/workflows/main.yml/badge.svg)](https://github.com/gufin/foodgram-project-react/actions/workflows/main.yml)
 # Foodgram
-Данные для второго эапа проверки.
-
-Проект опубликован: http://84.201.175.228/
-
-Логин: test@gmail.com
-
-Пароль: 123
-
 ### _Учебный проект_
 
 В приложении реализована возможность регистрации и аутентификации пользователей. Пользователи могут публиковать и редактировать рецепты, подписываться друг на друга, добавлять рецепты в избранное, а также составлять списки покупок и скачивать их в формате pdf.
