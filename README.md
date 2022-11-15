@@ -66,7 +66,7 @@ Load ingredient data:
 ```sh
 sudo docker-compose exec web bash load_data.sh
 ```
-[api documentation](http://127.0.0.1/api/docs/) 
+[Api documentation](http://127.0.0.1/api/docs/) 
 
 [Admin panel](http://127.0.0.1/admin/) 
 
